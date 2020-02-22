@@ -4,7 +4,6 @@ body{
 		width:100%;
 		height:100%;
 		display:grid;
-
 		
 	}
 .cl_map { 
@@ -17,24 +16,38 @@ body{
 	}
 nav {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 3rem;
+	top: 1rem;
+	left: 1rem;
+	width: 10rem;
 	height: 5rem;
 	z-index: 3;
+	display: flex;
 }
 	
  nav .div1{
 		display: flex;
 		position: relative;
-		width: 100%;
+		width: 50%;
 		height: 100%;
-		background-color: green;
+		background-image:url("img/cup.png");
 		align-items: top;
 		justify-content: center;
 		box-shadow: 0 0 1.25rem rgba(black,0.2);
+		margin:0;	
 	}
-nav .div1 .input1 {
+ nav .div_i{
+		display: flex;
+		position: relative;
+		width: 50%;
+		height: 100%;
+		background-image:url("img/i.png");
+		align-items: top;
+		justify-content: center;
+		box-shadow: 0 0 1.25rem rgba(black,0.2);
+	    margin:0;
+	}
+	
+nav .div1 .input1, nav .div_i .input2 {
   position: relative;
   display: flex;
   align-items: center;
@@ -43,19 +56,22 @@ nav .div1 .input1 {
   height: 5rem;
  
 }	
-nav .div1 .input1 span{
+	
+nav .div1 .input1 span, nav .div_i .input2 span{
   position: relative;
   display: block;
   width: 100%;
   height: 2rem;
-  background-color: #34dddd;
+  /*background-color: #34dddd;*/
+  
+  
 }
 nav .div1 .input1 span:before, nav .div1 .input1 span:after {
-  position: absolute;
+  /*position: absolute;
   content:' ';
   width: 100%;
   height: 0.5rem;
-  background-color: #3498db;
+  background-color: #3498db;*/
 }
 
 nav .div1 .label1 {
@@ -69,7 +85,7 @@ nav .div1 .label1 {
 		/*overflow: hidden;*/
 		
 		
-		transition: all 0.5s ease;
+		transition: all 0.5s ease-out;
 		z-index: -1;
 	}
 nav .div1 .label1 a {
@@ -86,6 +102,21 @@ nav .div1 .label1 a {
 		color:rgb(0, 255, 127);
 		text-decoration: none;
 	 }
+nav .div_i .div_info{
+	    position: fixed;
+		top: -42vh;
+		left: 3.125rem;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 20.5vh;
+        margin: 0;
+		border: 2px solid white;
+		padding: 0.875rem 10rem 0.875rem 1.125rem;
+        background-color: rgba(22, 26, 30,0.5);
+		color:rgb(0, 255, 127);
+		transition: all 0.5s ease-out;
+     }
 nav .div1 .label1 #a_top
 {
 		border-top: 2px solid white;
@@ -95,14 +126,21 @@ nav .div1 .label1 #a_bottom
 {
 	border-bottom: 2px solid white;
 }	 
-nav .div1 #input1{
+nav .div1 #input1, nav .div_i #input2{
 		display: none;
 	}
+	
 #input1:checked ~ .label1	
 		{
 		   top: 0vh; 	
-	       left: 3.125rem;
-		   transition: all 0.5s ease;
+	       left: 10.125rem;
+		   transition: all 0.5s ease-out;
+		}
+#input2:checked ~ .div_info
+		{
+		   top: 0vh; 	
+	       left: 15.125rem;
+		   transition: all 0.5s ease-outease;
 		}
 nav .div1 .label1 a:hover{
 		background-color: rgba(47, 79, 79,0.9);
